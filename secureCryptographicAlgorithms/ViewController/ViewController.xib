@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="secureCryptographicAlgorithms" customModuleProvider="target">
+            <connections>
+                <outlet property="decryptedTextFld" destination="eYL-lj-4mT" id="pN4-Et-pfT"/>
+                <outlet property="encryptedTextFld" destination="Pyh-sc-lrm" id="bDV-q5-hZs"/>
+                <outlet property="enterTextField" destination="BPz-Fs-RaG" id="zps-TU-g6u"/>
+                <outlet property="view" destination="wbt-WC-dHz" id="WaS-ht-1RW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="wbt-WC-dHz">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="A99-6c-0W8">
+                    <rect key="frame" x="8" y="36" width="359" height="615"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDa-qe-11Q">
+                            <rect key="frame" x="0.0" y="0.0" width="359" height="199.5"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BPz-Fs-RaG">
+                                    <rect key="frame" x="0.0" y="0.0" width="289" height="199.5"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="KVO-Q0-BFO"/>
+                                    </connections>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ops-Ub-nBZ">
+                                    <rect key="frame" x="289" y="0.0" width="70" height="199.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="70" id="TST-ge-18P"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                    <state key="normal" title="ENCODE"/>
+                                    <connections>
+                                        <action selector="encryptPressed" destination="-1" eventType="touchUpInside" id="Kjx-1V-FKO"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0x0-1j-qgs">
+                            <rect key="frame" x="0.0" y="207.5" width="359" height="200"/>
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pyh-sc-lrm">
+                                    <rect key="frame" x="0.0" y="0.0" width="289" height="200"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="4it-ct-zev"/>
+                                    </connections>
+                                </textView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7W2-LP-UqC">
+                                    <rect key="frame" x="289" y="0.0" width="70" height="200"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="70" id="DQA-4h-kRO"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                    <state key="normal" title="DECODE"/>
+                                    <connections>
+                                        <action selector="decryptPressed" destination="-1" eventType="touchUpInside" id="c9h-FH-oQC"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8g8-oz-diP">
+                            <rect key="frame" x="0.0" y="415.5" width="359" height="199.5"/>
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eYL-lj-4mT">
+                                    <rect key="frame" x="0.0" y="0.0" width="289" height="199.5"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="rz8-JM-C4L"/>
+                                    </connections>
+                                </textView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsf-bt-TYC">
+                                    <rect key="frame" x="289" y="0.0" width="70" height="199.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="70" id="PTv-zE-MNB"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                    <state key="normal" title="RESET"/>
+                                    <connections>
+                                        <action selector="resetPressed" destination="-1" eventType="touchUpInside" id="3Uw-mo-k96"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="A99-6c-0W8" firstAttribute="leading" secondItem="4jK-zz-1o7" secondAttribute="leading" constant="8" id="4SN-WB-lWb"/>
+                <constraint firstItem="4jK-zz-1o7" firstAttribute="bottom" secondItem="A99-6c-0W8" secondAttribute="bottom" constant="16" id="Y1H-9h-yYi"/>
+                <constraint firstItem="A99-6c-0W8" firstAttribute="top" secondItem="4jK-zz-1o7" secondAttribute="top" constant="16" id="ZGS-3I-1bF"/>
+                <constraint firstItem="4jK-zz-1o7" firstAttribute="trailing" secondItem="A99-6c-0W8" secondAttribute="trailing" constant="8" id="ppt-mC-7Z6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="4jK-zz-1o7"/>
+            <point key="canvasLocation" x="-7.2000000000000002" y="169.56521739130437"/>
+        </view>
+    </objects>
+</document>
