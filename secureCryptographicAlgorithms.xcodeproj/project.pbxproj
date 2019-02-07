@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED2222F8220B162500AD5F30 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2222F6220B162500AD5F30 /* MenuViewController.swift */; };
+		ED2222F9220B162500AD5F30 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED2222F7220B162500AD5F30 /* MenuViewController.xib */; };
+		ED2222FD220B32D700AD5F30 /* KeyChainMenager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2222FC220B32D700AD5F30 /* KeyChainMenager.swift */; };
+		ED222300220B34BC00AD5F30 /* PassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2222FE220B34BC00AD5F30 /* PassViewController.swift */; };
+		ED222301220B34BC00AD5F30 /* PassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED2222FF220B34BC00AD5F30 /* PassViewController.xib */; };
 		ED69759C2209D44B00D10613 /* text.txt in Resources */ = {isa = PBXBuildFile; fileRef = ED69759B2209D44A00D10613 /* text.txt */; };
 		ED6975A0220ACF8D00D10613 /* AsciiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED69759E220ACF8D00D10613 /* AsciiViewController.swift */; };
 		ED6975A1220ACF8D00D10613 /* AsciiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED69759F220ACF8D00D10613 /* AsciiViewController.xib */; };
@@ -19,6 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED2222F6220B162500AD5F30 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		ED2222F7220B162500AD5F30 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		ED2222FB220B2BE200AD5F30 /* secureCryptographicAlgorithms.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = secureCryptographicAlgorithms.entitlements; sourceTree = "<group>"; };
+		ED2222FC220B32D700AD5F30 /* KeyChainMenager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainMenager.swift; sourceTree = "<group>"; };
+		ED2222FE220B34BC00AD5F30 /* PassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassViewController.swift; sourceTree = "<group>"; };
+		ED2222FF220B34BC00AD5F30 /* PassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PassViewController.xib; sourceTree = "<group>"; };
 		ED69759B2209D44A00D10613 /* text.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = text.txt; sourceTree = "<group>"; };
 		ED69759E220ACF8D00D10613 /* AsciiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsciiViewController.swift; sourceTree = "<group>"; };
 		ED69759F220ACF8D00D10613 /* AsciiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AsciiViewController.xib; sourceTree = "<group>"; };
@@ -44,6 +55,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED2222FA220B162B00AD5F30 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				ED2222F6220B162500AD5F30 /* MenuViewController.swift */,
+				ED2222F7220B162500AD5F30 /* MenuViewController.xib */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		ED222302220B34C100AD5F30 /* Pass */ = {
+			isa = PBXGroup;
+			children = (
+				ED2222FE220B34BC00AD5F30 /* PassViewController.swift */,
+				ED2222FF220B34BC00AD5F30 /* PassViewController.xib */,
+			);
+			path = Pass;
+			sourceTree = "<group>";
+		};
 		ED69759D220ACEC400D10613 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,7 +111,11 @@
 		EDD8C94B220841D600262A72 /* secureCryptographicAlgorithms */ = {
 			isa = PBXGroup;
 			children = (
+				ED2222FB220B2BE200AD5F30 /* secureCryptographicAlgorithms.entitlements */,
 				EDD8C94C220841D600262A72 /* AppDelegate.swift */,
+				ED2222FC220B32D700AD5F30 /* KeyChainMenager.swift */,
+				ED222302220B34C100AD5F30 /* Pass */,
+				ED2222FA220B162B00AD5F30 /* Menu */,
 				ED69759D220ACEC400D10613 /* ViewController */,
 				EDD8C95F220870E500262A72 /* Extensions.swift */,
 				ED6975A2220ACF9F00D10613 /* Ascii */,
@@ -126,6 +159,11 @@
 				TargetAttributes = {
 					EDD8C948220841D600262A72 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -152,7 +190,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED222301220B34BC00AD5F30 /* PassViewController.xib in Resources */,
 				EDD8C957220841DA00262A72 /* LaunchScreen.storyboard in Resources */,
+				ED2222F9220B162500AD5F30 /* MenuViewController.xib in Resources */,
 				EDD8C9642208EEF500262A72 /* ViewController.xib in Resources */,
 				EDD8C954220841DA00262A72 /* Assets.xcassets in Resources */,
 				ED6975A1220ACF8D00D10613 /* AsciiViewController.xib in Resources */,
@@ -168,9 +208,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED6975A0220ACF8D00D10613 /* AsciiViewController.swift in Sources */,
+				ED2222F8220B162500AD5F30 /* MenuViewController.swift in Sources */,
 				EDD8C9622208EB4B00262A72 /* ViewController.swift in Sources */,
+				ED2222FD220B32D700AD5F30 /* KeyChainMenager.swift in Sources */,
 				EDD8C94D220841D600262A72 /* AppDelegate.swift in Sources */,
 				EDD8C960220870E500262A72 /* Extensions.swift in Sources */,
+				ED222300220B34BC00AD5F30 /* PassViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +353,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = secureCryptographicAlgorithms/secureCryptographicAlgorithms.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T34HR8XSM7;
 				INFOPLIST_FILE = secureCryptographicAlgorithms/Info.plist;
@@ -329,6 +373,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = secureCryptographicAlgorithms/secureCryptographicAlgorithms.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T34HR8XSM7;
 				INFOPLIST_FILE = secureCryptographicAlgorithms/Info.plist;

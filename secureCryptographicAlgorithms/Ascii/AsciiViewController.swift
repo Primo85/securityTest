@@ -15,21 +15,36 @@ class AsciiViewController: UIViewController {
     @IBOutlet weak var dataDecTextView: UITextView!
     
     @IBAction func getData() {
-//        data = inputTextField.text?.data(using: String.Encoding.ascii)
-        data = Data.init(base64Encoded: inputTextField.text ?? "")
+        data = inputTextField.text?.data(using: String.Encoding.ascii)
+//        data = Data.init(base64Encoded: inputTextField.text ?? "")
         print(data)
     }
     
     var data: Data? {
         didSet {
-            let stringOf01 = data?.reduce("") { (acc, byte) -> String in
-                acc + String(byte, radix: 2) + " "
-            }
+            let stringOf01 = data?.reduce("") { $0 + $1.asBinay + " " }
             dataBinTextView.text = stringOf01
-            let stringOfDec = data?.reduce("") { (acc, byte) -> String in
-                acc + String(byte) + " "
-            }
+            let stringOfDec = data?.reduce("") { $0 + $1.asDec + " " }
             dataDecTextView.text = stringOfDec
         }
+    }
+    
+    var dataStringOf01: String = "" {
+        didSet {
+            
+        }
+    }
+}
+
+extension UInt8 {
+    var asBinay: String {
+        var str = String(self, radix: 2)
+        while str.count < 8 {
+            str = "0" + str
+        }
+        return str
+    }
+    var asDec: String {
+        return "\(self)"
     }
 }

@@ -12,10 +12,10 @@ var error: Unmanaged<CFError>?
 
 var globalKey: SecKey? {
 //    guard let data = publicKeys.Seba.rawValue.data(using: String.Encoding.utf8) else { return nil }
-    guard let data = Data.init(base64Encoded: publicKeys.Szymon.rawValue) else { return nil }
+    guard let data = Data.init(base64Encoded: publicKeys.Seba.rawValue) else { return nil }
     print("globalKey ", data)
     let keyDict:[NSObject:NSObject] = [
-        kSecAttrKeyType: kSecAttrKeyType,
+        kSecAttrKeyType: kSecAttrKeyTypeRSA,
         kSecAttrKeyClass: kSecAttrKeyClassPublic,
         kSecAttrKeySizeInBits: NSNumber(value: 3072),
         kSecReturnPersistentRef: true as NSObject]
@@ -30,13 +30,13 @@ var globalKey: SecKey? {
 
 var globalPrivateKey: SecKey? {
 //    guard let data = privateKeys.myKey.rawValue.data(using: String.Encoding.utf8) else { return nil }
-    guard let data = Data.init(base64Encoded: privateKeys.Szymon.rawValue) else { return nil }
+    guard let data = Data.init(base64Encoded: privateKeys.Seba.rawValue) else { return nil }
     print("globalPrivateKeyData ", data)
     let keyDict:[NSObject:NSObject] = [
-        kSecAttrKeyType: kSecAttrKeyType,
+        kSecAttrKeyType: kSecAttrKeyTypeRSA,
         kSecAttrKeyClass: kSecAttrKeyClassPrivate,
-        kSecAttrKeySizeInBits: NSNumber(value: 3072)
-//        kSecReturnPersistentRef: true as NSObject
+        kSecAttrKeySizeInBits: NSNumber(value: 4096),
+        kSecReturnPersistentRef: true as NSObject
     ]
     guard let key = SecKeyCreateWithData(data as CFData,
                                          keyDict as CFDictionary,

@@ -18,7 +18,6 @@ final class ViewController: UIViewController {
     var statusCode: OSStatus?
     var publicKey: SecKey?
     var privateKey: SecKey?
-    
     let algorithm: SecKeyAlgorithm = .rsaEncryptionOAEPSHA512
     
     var encriptedData: CFData? {
@@ -105,6 +104,7 @@ final class ViewController: UIViewController {
         let str = String(data: cipherText as Data, encoding: .utf8) ?? "nil"
         decryptedTextFld.text = str + "    \(str.count)"
     }
+    // RESET
     @IBAction func resetPressed() {
         enterTextField.text = nil
         encriptedData = nil

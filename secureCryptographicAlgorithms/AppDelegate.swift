@@ -16,9 +16,10 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let vc = AsciiViewController()
-        vc.view.backgroundColor = .yellow
-        window?.rootViewController = vc
+        let vc = MenuViewController()
+        let nc = UINavigationController()
+        nc.viewControllers = [vc]
+        window?.rootViewController = nc
         window?.makeKeyAndVisible()
         return true
     }
